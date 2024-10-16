@@ -24,8 +24,8 @@ const Band = ({ band, changeCurrentBand }) => {
 			<div className="card-footer">
 				<button
 					className="btn btn-info float-right"
-					data-toggle="modal"
-					data-target="#exampleModal"
+					// data-toggle="modal"
+					// data-target="#exampleModal"
 					onClick={() => changeCurrentBand(band)}
 				>
 					read more
