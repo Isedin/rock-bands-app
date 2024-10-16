@@ -1,14 +1,14 @@
 import React from "react";
 import Band from "./Band";
 
-const BandsList = ({ bands }) => {
-    console.log(bands);
-    
+const BandsList = ({ bands, changeCurrentBand }) => {
+	console.log(bands);
+
 	const allBands = bands.map((band) => {
 		return (
 			<div className="col-6" key={band.id}>
 				{/* ovdje ispod prosledjujemo band iz gornjeg loopa */}
-				<Band band={band} />
+				<Band band={band} changeCurrentBand={changeCurrentBand} />
 			</div>
 		);
 	});

@@ -6,6 +6,11 @@ import Modal from "./components/Modal";
 class App extends React.Component {
 	state = {
 		bands: [],
+		currentBand: {},
+	};
+
+	changeCurrentBand = (band) => {
+		this.setState({ currentBand: band });
 	};
 
 	componentDidMount() {
@@ -24,8 +29,11 @@ class App extends React.Component {
 			<>
 				<Navbar />
 				{/* ovim bandslist kreira state iz bands */}
-				<BandsList bands={this.state.bands} />
-				<Modal />
+				<BandsList
+					bands={this.state.bands}
+					changeCurrentBand={this.changeCurrentBand}
+				/>
+				<Modal currentBand={this.state.currentBand} />
 			</>
 		);
 	}

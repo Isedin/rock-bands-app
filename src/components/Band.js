@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Band.module.css";
 
-const Band = ({ band }) => {
+const Band = ({ band, changeCurrentBand }) => {
 	return (
 		<div className="card mt-3">
 			<div className="card-header">
@@ -26,6 +26,7 @@ const Band = ({ band }) => {
 					className="btn btn-info float-right"
 					data-toggle="modal"
 					data-target="#exampleModal"
+					onClick={() => changeCurrentBand(band)}
 				>
 					read more
 				</button>

@@ -1,42 +1,71 @@
 import React from "react";
 
-const Modal = () => {
+const Modal = ({ currentBand }) => {
 	return (
 		<div
-			class="modal fade"
+			className="modal fade"
 			id="exampleModal"
-			tabindex="-1"
 			role="dialog"
 			aria-labelledby="exampleModalLabel"
 			aria-hidden="true"
 		>
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">
-							Modal title
+			<div className="modal-dialog" role="document">
+				<div className="modal-content">
+					<div className="modal-header">
+						<h5 className="modal-title" id="exampleModalLabel">
+							{currentBand.name}
 						</h5>
 						<button
 							type="button"
-							class="close"
+							className="close"
 							data-dismiss="modal"
 							aria-label="Close"
 						>
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
-					<div class="modal-body">...</div>
-					<div class="modal-footer">
+					<div className="modal-body">
+						<div className="row">
+							<div className="col-4">
+								<img
+									src={currentBand.thumb1}
+									width="140px"
+									height="85px"
+									alt=""
+								/>
+							</div>
+							<div className="col-4">
+								<img
+									src={currentBand.thumb2}
+									width="140px"
+									height="85px"
+									alt=""
+								/>
+							</div>
+							<div className="col-4">
+								<img
+									src={currentBand.thumb3}
+									width="140px"
+									height="85px"
+									alt=""
+								/>
+							</div>
+						</div>
+						<div className="row">
+							<p className="p-2">{currentBand.info}</p>
+						</div>
+					</div>
+					<div className="modal-footer">
 						<button
 							type="button"
-							class="btn btn-secondary"
+							className="btn btn-secondary"
 							data-dismiss="modal"
 						>
 							Close
 						</button>
-						<button type="button" class="btn btn-primary">
+						{/* <button type="button" className="btn btn-primary">
 							Save changes
-						</button>
+						</button> */}
 					</div>
 				</div>
 			</div>
